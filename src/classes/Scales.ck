@@ -8,4 +8,11 @@ public class Scales {
         return result;
     }
 
+    public static Scale Minor(int tonic) {
+        Scale result;
+        [ 2, 1, 2, 2, 1, 2, 2 ] @=>  int major_intervals[];
+        result.init(tonic, major_intervals);
+        return result;
+    }
+
 }
