@@ -1,6 +1,7 @@
 public class Chordable {
     Pan2 bus;
     Playable v[];
+    int inv;
 
     public void init(Playable voices[]) {
         voices @=> v;
@@ -9,9 +10,15 @@ public class Chordable {
         }
     }
 
+    function void inversion(int inversion) {
+        if (inversion > -1 && inversion < 4) {
+            inversion => inv;
+        }
+    }
+
     function void play(Chord chord, dur duration, float gain) {
         for (0 => int i; i < v.cap(); i++) {
-            spork ~ v[i].play(chord.note(i), duration, gain/v.cap());
+            spork ~ v[i].play(chord.note(i+inv), duration, gain/v.cap());
         }
 
 	duration => now;
@@ -19,7 +26,7 @@ public class Chordable {
 
     function void arpeggio(Chord chord, int sequence[], dur duration, float gain) {
         for (0 => int i; i < sequence.cap(); i++) {
-            v[i % v.cap()].play(chord.note(sequence[i]), duration / sequence.cap(), gain);
+            v[i % v.cap()].play(chord.note(sequence[i]+inv), duration / sequence.cap(), gain);
         }
     }
 
