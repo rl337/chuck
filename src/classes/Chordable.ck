@@ -26,7 +26,15 @@ public class Chordable {
 
     function void arpeggio(Chord chord, int sequence[], dur duration, float gain) {
         for (0 => int i; i < sequence.cap(); i++) {
-            v[i % v.cap()].play(chord.note(sequence[i]+inv), duration / sequence.cap(), gain);
+            sequence[i] => int index;
+            duration / sequence.cap() => dur notedur;
+
+            // a -1 represents a rest
+            if (sequence[i] != -1) {
+                v[i % v.cap()].play(chord.note(index+inv), notedur, gain);
+            } else {
+                notedur => now;
+            }
         }
     }
 
