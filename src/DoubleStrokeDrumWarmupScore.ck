@@ -11,6 +11,10 @@ right.bus => dac;
 BPM bpm;
 bpm.tempo(120);
 
+WavFileWriter writer;
+writer.init("a.wav", 1.0);
+dac => writer.bus;
+
 [
     [
         9,0,0,0, 9,0,0,0,
