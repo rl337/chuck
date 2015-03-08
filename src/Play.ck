@@ -14,6 +14,4 @@ Machine.add(me.dir() + "/classes/DrumPattern.ck");
 Machine.add(me.dir() + "/classes/DrumKit.ck");
 Machine.add(me.dir() + "/classes/WavFileWriter.ck");
 
-
-
-Machine.add(me.dir() + "/DoubleStrokeDrumWarmupScore.ck");
+Machine.add(me.dir() + "/scores/" + me.arg(0));
