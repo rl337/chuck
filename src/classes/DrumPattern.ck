@@ -9,12 +9,12 @@ public class DrumPattern {
     
     0 => int REST;
 
-    function void init() {
-        bpm.tempo(120);
+    function void init(int init_bpm) {
+        bpm.tempo(init_bpm);
 
         0 => ptr;
 
-        bpm.sixtyfourthNote / 1.0::second => tempo;
+        bpm.onetwentyeighthNote / 1.0::second => tempo;
 
         int values[0] @=> pattern;
     }

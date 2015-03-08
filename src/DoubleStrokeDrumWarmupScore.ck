@@ -7,10 +7,10 @@ kit.init(audio_dir, 0.9, 0.9, 0.75);
 kit.bus => dac;
 
 DrumPattern left;
-left.init();
+left.init(120);
 
 DrumPattern right;
-right.init();
+right.init(120);
 
 WavFileWriter writer;
 writer.init("a.wav", 1.0);
