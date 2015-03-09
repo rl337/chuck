@@ -16,7 +16,7 @@ WavFileWriter writer;
 writer.init("a.wav", 1.0);
 dac => writer.bus;
 
-left.addRepeated( [ 0,0,6,6, 0,0,0,0, 6,6,0,0, 9,0,0,0 ], left.bpm.sixteenthNote, 4);
-right.addRepeated( [ 6,6,0,0, 9,0,0,0, 0,0,6,6, 0,0,0,0 ], right.bpm.sixteenthNote, 4);
+left.addRepeated( [ 0,0,6,6, 0,0,0,0, 6,6,0,0, 9,0,0,0 ], left.bpm.sixteenthNote, 16);
+right.addRepeated( [ 6,6,0,0, 9,0,0,0, 0,0,6,6, 0,0,0,0 ], right.bpm.sixteenthNote, 16);
 
 kit.play(left, right);
