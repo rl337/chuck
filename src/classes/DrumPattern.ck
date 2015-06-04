@@ -37,42 +37,6 @@ public class DrumPattern {
         }
     }
 
-    function void addFullTriplet(dur res, int intensity) {
-        ((res/1::second) / tempo) $ int => int res_slots;
-
-        resize(res_slots);
-        
-        (res_slots / 3) $ int => int triplet_slots;
-        intensity => pattern[ptr];
-        intensity => pattern[ptr + triplet_slots];
-        intensity => pattern[ptr + 2*triplet_slots];
-
-        res_slots +=> ptr;
-    }
-
-    function void addTripletA(dur res, int intensity) {
-        ((res/1::second) / tempo) $ int => int res_slots;
-
-        resize(res_slots);
-        
-        (res_slots / 3) $ int => int triplet_slots;
-        intensity => pattern[ptr];
-        intensity => pattern[ptr + 2*triplet_slots];
-
-        res_slots +=> ptr;
-    }
-
-    function void addTripletB(dur res, int intensity) {
-        ((res/1::second) / tempo) $ int => int res_slots;
-
-        resize(res_slots);
-        
-        (res_slots / 3) $ int => int triplet_slots;
-        intensity => pattern[ptr + triplet_slots];
-
-        res_slots +=> ptr;
-    }
-
     function void addRepeated(int notes[], dur res, int n) {
         for ( 0 => int i; i < n; 1 +=> i) {
             add(notes, res);

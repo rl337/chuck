@@ -1,4 +1,6 @@
 public class BPM {
+    static dur wholeNote;
+    static dur halfNote;
     static dur quarterNote;
     static dur eighthNote;
     static dur sixteenthNote;
@@ -15,6 +17,9 @@ public class BPM {
         sixteenthNote * 0.5 => thirtysecondNote;
         thirtysecondNote * 0.5 => sixtyfourthNote;
         sixtyfourthNote * 0.5 => onetwentyeighthNote;
+
+        quarterNote * 2 => halfNote;
+        halfNote * 2 => wholeNote;
     }
     
 }
